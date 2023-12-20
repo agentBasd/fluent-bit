@@ -1,0 +1,24 @@
+--- a/CMakeLists.txt	2023-12-15 13:48:09.321665610 +0000
++++ b/CMakeLists.txt	2023-12-15 20:08:18.041915225 +0000
+@@ -900,7 +900,7 @@
+   ExternalProject_Add(jemalloc
+     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/jemalloc-5.3.0
+     CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/lib/jemalloc-5.3.0/configure ${AUTOCONF_HOST_OPT} "${FLB_JEMALLOC_OPTIONS_LIST}" --prefix=<INSTALL_DIR>
+-    CFLAGS=-std=gnu99\ -Wall\ -pipe\ -g3\ -O3\ -funroll-loops
++    CFLAGS=-std=gnu99\ -Wall\ -pipe\ -g3\ -O3\ -funroll-loops\ -fPIC
+     BUILD_COMMAND $(MAKE)
+     INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/
+     INSTALL_COMMAND $(MAKE) install_lib_static install_include)
+@@ -1083,9 +1083,9 @@
+   set(FLB_INSTALL_INCLUDEDIR "include")
+ else()
+   set(FLB_INSTALL_BINDIR ${CMAKE_INSTALL_FULL_BINDIR})
+-  set(FLB_INSTALL_LIBDIR "${CMAKE_INSTALL_LIBDIR}/${FLB_OUT_NAME}")
+-  set(FLB_INSTALL_CONFDIR "${CMAKE_INSTALL_SYSCONFDIR}/${FLB_OUT_NAME}/")
+-  set(FLB_INSTALL_INCLUDEDIR "${CMAKE_INSTALL_PREFIX}/include")
++  set(FLB_INSTALL_LIBDIR ${CMAKE_INSTALL_FULL_LIBDIR})
++  set(FLB_INSTALL_CONFDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}/${FLB_OUT_NAME}")
++  set(FLB_INSTALL_INCLUDEDIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+ endif()
+ 
+ # Instruct CMake to build the Fluent Bit Core
