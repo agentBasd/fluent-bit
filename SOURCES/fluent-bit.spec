@@ -93,9 +93,6 @@ rm -rvf %{buildroot}%{_bindir}/luajit %{buildroot}%{_libdir}/libluajit.a
 * Fri Apr 21 2023 Eduardo Silva <eduardo@calyptia.com> - 2.1.1-1
 - Upstream 2.1.1
 
-* Wed Jul 19 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.9.9-4
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
-
 * Thu Jan 19 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.9.9-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild
 
