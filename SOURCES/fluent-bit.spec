@@ -45,7 +45,7 @@ Fluent Bit is a high performance and multi-platform log forwarder.
     -DCMAKE_BUILD_TYPE=RelWithDebInfo\
     -DFLB_EXAMPLES=Off\
     -DFLB_TRACE=On\
-    -DFLB_JEMALLOC=On\
+    -DFLB_JEMALLOC=Off\
     -DFLB_IN_SYSTEMD=On\
     -DFLB_OUT_SLACK=On\
     -DFLB_OUT_TD=On\
@@ -90,8 +90,8 @@ rm -rvf %{buildroot}%{_bindir}/luajit %{buildroot}%{_libdir}/libluajit.a
 %{_unitdir}/%{name}.service
 
 %changelog
-* Sat Oct 21 2023 Jered Floyd <jered@convivian.com> - 2.1.10-1
-- Upstream 2.1.10
+* Fri Apr 21 2023 Eduardo Silva <eduardo@calyptia.com> - 2.1.1-1
+- Upstream 2.1.1
 
 * Wed Jul 19 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.9.9-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
